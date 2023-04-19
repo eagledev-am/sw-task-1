@@ -1,7 +1,6 @@
 import express from 'express'
 import { engine } from 'express-handlebars';
-const port = 5000;
-const host = '127.0.0.1';
+const port = 8080;
 const app = express();
 
 app.engine('handlebars', engine());
@@ -32,6 +31,4 @@ app.get('/', (req , res) =>{
     res.render('page' , {layout:false , student : students})
 })
 
-app.listen(port , host , ()=> {
-    console.log('running on :' + host + ':' + port );
-})
+app.listen(port)
